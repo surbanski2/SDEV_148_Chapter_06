@@ -10,6 +10,7 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_jvte0"]
 
 [node name="Plane" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_dpar4")
 
 [node name="cartoon_plane" parent="." instance=ExtResource("1_sahx8")]
