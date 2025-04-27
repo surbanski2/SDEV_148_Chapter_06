@@ -8,7 +8,7 @@ signal fuel_changed
 @export var roll_speed = 2.5
 @export var level_speed = 4.0
 @export var fordward_speed = 25
-@export var fuel_burn = 1.0
+@export var fuel_burn = 0.5
 
 
 var roll_input = 0
@@ -57,8 +57,11 @@ func die():
 	$cartoon_plane.hide()
 	$Explosion.show()
 	$Explosion.play("default")
+	$ImpactSound.play()
 	await $Explosion.animation_finished
 	$Explosion.hide()
 	dead.emit()
-	get_tree().reload_current_scene()
+	if score > Global.high_score:
+		Global.high_score = score
+		Global.save_score()
 		

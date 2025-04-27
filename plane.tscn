@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxeltd1d1nxm6"]
+[gd_scene load_steps=12 format=3 uid="uid://bxeltd1d1nxm6"]
 
 [ext_resource type="Script" uid="uid://btefmvvsnl1o2" path="res://plane.gd" id="1_dpar4"]
 [ext_resource type="PackedScene" uid="uid://bas1mp0vqdygo" path="res://assets/cartoon_plane.glb" id="1_sahx8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://x2tshkw50ujd" path="res://assets/smoke/smoke_03.png" id="5_gwo5b"]
 [ext_resource type="Texture2D" uid="uid://b6uwrsk4ac4w1" path="res://assets/smoke/smoke_04.png" id="6_ye4pl"]
 [ext_resource type="Texture2D" uid="uid://d1jcc5nasbftt" path="res://assets/smoke/smoke_05.png" id="7_a6rsd"]
+[ext_resource type="AudioStream" uid="uid://s8b1uaamwt1r" path="res://assets/audio/impact.wav" id="8_afyqo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_usju0"]
 height = 4.5
@@ -32,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_a6rsd")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -60,5 +61,8 @@ visible = false
 pixel_size = 0.5
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_b6rx2")
+
+[node name="ImpactSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_afyqo")
 
 [editable path="cartoon_plane"]

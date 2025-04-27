@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bogtpj8a6fpao"]
+
+[ext_resource type="Script" uid="uid://bra8dowyhgiui" path="res://title_screen.gd" id="1_hafda"]
+[ext_resource type="Texture2D" uid="uid://c86a7oei35jxh" path="res://assets/styled_sky.hdr" id="2_tpml5"]
+[ext_resource type="Texture2D" uid="uid://b4icqp4ouit2u" path="res://assets/buttons/play_button.png" id="3_jqemp"]
+[ext_resource type="FontFile" uid="uid://dw00he7xunq6x" path="res://assets/Baloo2-Medium.ttf" id="3_tpml5"]
+[ext_resource type="Texture2D" uid="uid://cui4r5dqpw4v2" path="res://assets/buttons/play_button_pr.png" id="4_013yr"]
+[ext_resource type="Texture2D" uid="uid://dt77nlwhvyck4" path="res://assets/buttons/play_button_h.png" id="5_8vmu4"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hafda")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tpml5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.5
+offset_top = -203.5
+offset_right = 421.5
+offset_bottom = 203.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tpml5")
+theme_override_font_sizes/font_size = 128
+text = "INFINITE FLYER"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_jqemp")
+texture_pressed = ExtResource("4_013yr")
+texture_hover = ExtResource("5_8vmu4")
+
+[node name="HighScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_tpml5")
+theme_override_font_sizes/font_size = 64
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

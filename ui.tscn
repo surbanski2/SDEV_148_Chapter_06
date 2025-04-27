@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://deby7d5o2yxr"]
+
+[ext_resource type="Texture2D" uid="uid://blkkor3opky51" path="res://assets/bar_glass.png" id="1_27fn8"]
+[ext_resource type="Script" uid="uid://mj61f6aw8x6s" path="res://ui.gd" id="1_nltto"]
+[ext_resource type="Texture2D" uid="uid://cnjkcysk88q03" path="res://assets/bar_red.png" id="2_nltto"]
+[ext_resource type="FontFile" uid="uid://dw00he7xunq6x" path="res://assets/Baloo2-Medium.ttf" id="3_ibotj"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nltto")
+
+[node name="FuelBar" type="TextureProgressBar" parent="."]
+offset_right = 443.0
+offset_bottom = 40.0
+max_value = 10.0
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_top = 6
+stretch_margin_right = 6
+stretch_margin_bottom = 6
+texture_over = ExtResource("1_27fn8")
+texture_progress = ExtResource("2_nltto")
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 77.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_ibotj")
+theme_override_font_sizes/font_size = 48
+text = "0"
